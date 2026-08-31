@@ -1,0 +1,1043 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport"
+      content="width=device-width, initial-scale=1.0">
+
+<title>INCHEON KIA | Employee Search Portal</title>
+
+<meta name="description"
+      content="INCHEON KIA Employee Search Portal">
+
+
+<style>
+
+/* =========================================
+   RESET
+========================================= */
+
+* {
+
+    margin: 0;
+
+    padding: 0;
+
+    box-sizing: border-box;
+
+    font-family:
+        Arial,
+        Helvetica,
+        sans-serif;
+
+}
+
+
+/* =========================================
+   BODY
+========================================= */
+
+body {
+
+    min-height: 100vh;
+
+    background:
+        linear-gradient(
+            135deg,
+            #111827,
+            #1e3a8a
+        );
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    padding: 20px;
+
+}
+
+
+/* =========================================
+   MAIN CONTAINER
+========================================= */
+
+.container {
+
+    width: 100%;
+
+    max-width: 520px;
+
+    background: #ffffff;
+
+    border-radius: 20px;
+
+    padding: 35px 30px;
+
+    box-shadow:
+        0 20px 50px
+        rgba(0,0,0,0.25);
+
+}
+
+
+/* =========================================
+   COMPANY HEADER
+========================================= */
+
+.company {
+
+    text-align: center;
+
+}
+
+
+.company h1 {
+
+    color: #123c8c;
+
+    font-size: 30px;
+
+    font-weight: 800;
+
+    letter-spacing: 1px;
+
+}
+
+
+.company p {
+
+    color: #666;
+
+    margin-top: 8px;
+
+    font-size: 14px;
+
+}
+
+
+/* =========================================
+   BLUE LINE
+========================================= */
+
+.line {
+
+    width: 65px;
+
+    height: 4px;
+
+    background: #123c8c;
+
+    border-radius: 10px;
+
+    margin:
+        18px
+        auto
+        25px;
+
+}
+
+
+/* =========================================
+   TITLE
+========================================= */
+
+.form-title {
+
+    text-align: center;
+
+    color: #222;
+
+    font-size: 22px;
+
+    font-weight: 700;
+
+    margin-bottom: 10px;
+
+}
+
+
+.subtitle {
+
+    text-align: center;
+
+    color: #777;
+
+    font-size: 14px;
+
+    margin-bottom: 25px;
+
+}
+
+
+/* =========================================
+   SEARCH AREA
+========================================= */
+
+.search-box {
+
+    display: flex;
+
+    gap: 10px;
+
+    margin-bottom: 20px;
+
+}
+
+
+.search-box input {
+
+    flex: 1;
+
+    padding: 14px;
+
+    border:
+        1px solid #d1d5db;
+
+    border-radius: 10px;
+
+    font-size: 16px;
+
+    outline: none;
+
+}
+
+
+.search-box input:focus {
+
+    border-color: #123c8c;
+
+    box-shadow:
+        0 0 0 3px
+        rgba(18,60,140,0.1);
+
+}
+
+
+.search-button {
+
+    border: none;
+
+    padding:
+        0 20px;
+
+    border-radius: 10px;
+
+    background: #123c8c;
+
+    color: white;
+
+    font-size: 16px;
+
+    font-weight: 700;
+
+    cursor: pointer;
+
+    transition: 0.2s;
+
+}
+
+
+.search-button:hover {
+
+    background: #0d2f70;
+
+}
+
+
+.search-button:disabled {
+
+    background: #999;
+
+    cursor: not-allowed;
+
+}
+
+
+/* =========================================
+   LOADING
+========================================= */
+
+.loading {
+
+    display: none;
+
+    text-align: center;
+
+    padding: 15px;
+
+    color: #123c8c;
+
+    font-weight: 600;
+
+}
+
+
+/* =========================================
+   ERROR
+========================================= */
+
+.error {
+
+    display: none;
+
+    background: #fee2e2;
+
+    color: #b91c1c;
+
+    padding: 13px;
+
+    border-radius: 9px;
+
+    text-align: center;
+
+    margin-bottom: 18px;
+
+    font-size: 14px;
+
+}
+
+
+/* =========================================
+   RESULT CARD
+========================================= */
+
+.result-card {
+
+    display: none;
+
+    border:
+        1px solid #e5e7eb;
+
+    border-radius: 15px;
+
+    overflow: hidden;
+
+    margin-top: 10px;
+
+}
+
+
+/* =========================================
+   RESULT HEADER
+========================================= */
+
+.result-header {
+
+    background: #123c8c;
+
+    color: white;
+
+    padding: 18px;
+
+    text-align: center;
+
+}
+
+
+.result-header h2 {
+
+    font-size: 20px;
+
+}
+
+
+.result-header p {
+
+    margin-top: 5px;
+
+    font-size: 13px;
+
+    opacity: 0.9;
+
+}
+
+
+/* =========================================
+   DETAILS
+========================================= */
+
+.details {
+
+    padding: 20px;
+
+}
+
+
+.detail-row {
+
+    display: flex;
+
+    justify-content: space-between;
+
+    gap: 20px;
+
+    padding:
+        13px
+        0;
+
+    border-bottom:
+        1px solid #eeeeee;
+
+}
+
+
+.detail-row:last-child {
+
+    border-bottom: none;
+
+}
+
+
+.detail-label {
+
+    color: #777;
+
+    font-size: 14px;
+
+}
+
+
+.detail-value {
+
+    color: #222;
+
+    font-size: 15px;
+
+    font-weight: 600;
+
+    text-align: right;
+
+    word-break: break-word;
+
+}
+
+
+/* =========================================
+   SEARCH AGAIN
+========================================= */
+
+.search-again {
+
+    width: 100%;
+
+    margin-top: 18px;
+
+    padding: 13px;
+
+    border:
+        1px solid #123c8c;
+
+    background: white;
+
+    color: #123c8c;
+
+    border-radius: 9px;
+
+    font-size: 15px;
+
+    font-weight: 700;
+
+    cursor: pointer;
+
+}
+
+
+.search-again:hover {
+
+    background: #f0f4ff;
+
+}
+
+
+/* =========================================
+   FOOTER
+========================================= */
+
+.footer {
+
+    text-align: center;
+
+    color: #999;
+
+    font-size: 12px;
+
+    margin-top: 25px;
+
+}
+
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media(max-width: 480px) {
+
+    .container {
+
+        padding:
+            28px
+            20px;
+
+    }
+
+
+    .company h1 {
+
+        font-size: 26px;
+
+    }
+
+
+    .search-box {
+
+        flex-direction: column;
+
+    }
+
+
+    .search-button {
+
+        padding: 14px;
+
+    }
+
+
+    .detail-row {
+
+        flex-direction: column;
+
+        gap: 5px;
+
+    }
+
+
+    .detail-value {
+
+        text-align: left;
+
+    }
+
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<div class="container">
+
+
+    <!-- COMPANY -->
+
+    <div class="company">
+
+        <h1>
+            INCHEON KIA
+        </h1>
+
+        <p>
+            Employee Search Portal
+        </p>
+
+    </div>
+
+
+    <div class="line"></div>
+
+
+    <!-- TITLE -->
+
+    <div class="form-title">
+
+        Search Employee
+
+    </div>
+
+
+    <div class="subtitle">
+
+        Enter your Employee ID to view
+        employee information.
+
+    </div>
+
+
+    <!-- SEARCH -->
+
+    <div class="search-box">
+
+        <input
+            type="text"
+            id="employeeId"
+            placeholder="Enter Employee ID"
+            autocomplete="off"
+        >
+
+        <button
+            class="search-button"
+            id="searchButton"
+            onclick="searchEmployee()">
+
+            Search
+
+        </button>
+
+    </div>
+
+
+    <!-- LOADING -->
+
+    <div
+        class="loading"
+        id="loading">
+
+        Searching employee information...
+
+    </div>
+
+
+    <!-- ERROR -->
+
+    <div
+        class="error"
+        id="error">
+
+    </div>
+
+
+    <!-- RESULT -->
+
+    <div
+        class="result-card"
+        id="resultCard">
+
+
+        <div class="result-header">
+
+            <h2>
+                Employee Information
+            </h2>
+
+            <p>
+                INCHEON KIA
+            </p>
+
+        </div>
+
+
+        <div class="details">
+
+
+            <div class="detail-row">
+
+                <span class="detail-label">
+                    Employee ID
+                </span>
+
+                <span
+                    class="detail-value"
+                    id="resultEmployeeId">
+                </span>
+
+            </div>
+
+
+            <div class="detail-row">
+
+                <span class="detail-label">
+                    Full Name
+                </span>
+
+                <span
+                    class="detail-value"
+                    id="resultFullName">
+                </span>
+
+            </div>
+
+
+            <div class="detail-row">
+
+                <span class="detail-label">
+                    Department
+                </span>
+
+                <span
+                    class="detail-value"
+                    id="resultDepartment">
+                </span>
+
+            </div>
+
+
+            <div class="detail-row">
+
+                <span class="detail-label">
+                    Designation
+                </span>
+
+                <span
+                    class="detail-value"
+                    id="resultDesignation">
+                </span>
+
+            </div>
+
+
+            <div class="detail-row">
+
+                <span class="detail-label">
+                    Gmail
+                </span>
+
+                <span
+                    class="detail-value"
+                    id="resultGmail">
+                </span>
+
+            </div>
+
+
+            <button
+                class="search-again"
+                onclick="searchAgain()">
+
+                Search Another Employee
+
+            </button>
+
+
+        </div>
+
+    </div>
+
+
+    <!-- FOOTER -->
+
+    <div class="footer">
+
+        © 2026 INCHEON KIA.
+        All rights reserved.
+
+    </div>
+
+
+</div>
+
+
+
+<script>
+
+
+/* ==========================================
+   GOOGLE APPS SCRIPT WEB APP URL
+==========================================
+
+   REPLACE THIS URL WITH YOUR
+   GOOGLE APPS SCRIPT WEB APP URL.
+
+========================================== */
+
+const GOOGLE_SCRIPT_URL =
+"https://script.google.com/macros/s/AKfycbxlC9ZYfmUIgt64HmTBxuxrt23B72YwLlYAbxKDQQNy9ilYualnHDUm4A5w_rrylPVe/exec";
+
+
+
+/* ==========================================
+   SEARCH EMPLOYEE
+========================================== */
+
+function searchEmployee() {
+
+
+    const employeeId =
+        document
+        .getElementById("employeeId")
+        .value
+        .trim();
+
+
+    const searchButton =
+        document
+        .getElementById("searchButton");
+
+
+    const loading =
+        document
+        .getElementById("loading");
+
+
+    const error =
+        document
+        .getElementById("error");
+
+
+    const resultCard =
+        document
+        .getElementById("resultCard");
+
+
+
+    /* VALIDATION */
+
+    if (!employeeId) {
+
+        showError(
+            "Please enter an Employee ID."
+        );
+
+        return;
+
+    }
+
+
+
+    /* RESET */
+
+    error.style.display = "none";
+
+    resultCard.style.display = "none";
+
+    loading.style.display = "block";
+
+    searchButton.disabled = true;
+
+    searchButton.textContent =
+        "Searching...";
+
+
+
+    /* CREATE URL */
+
+    const url =
+        GOOGLE_SCRIPT_URL +
+        "?employeeId=" +
+        encodeURIComponent(employeeId);
+
+
+
+    /* REQUEST */
+
+    fetch(url)
+
+        .then(response => {
+
+            if (!response.ok) {
+
+                throw new Error(
+                    "Network error"
+                );
+
+            }
+
+            return response.json();
+
+        })
+
+
+        .then(data => {
+
+
+            loading.style.display =
+                "none";
+
+
+            searchButton.disabled =
+                false;
+
+
+            searchButton.textContent =
+                "Search";
+
+
+
+            /* EMPLOYEE FOUND */
+
+            if (data.success) {
+
+                displayEmployee(
+                    data.employee
+                );
+
+            }
+
+
+            /* NOT FOUND */
+
+            else {
+
+                showError(
+                    data.message ||
+                    "Employee not found."
+                );
+
+            }
+
+        })
+
+
+        .catch(error => {
+
+
+            console.error(error);
+
+
+            loading.style.display =
+                "none";
+
+
+            searchButton.disabled =
+                false;
+
+
+            searchButton.textContent =
+                "Search";
+
+
+            showError(
+                "Unable to connect to the database. Please try again."
+            );
+
+        });
+
+}
+
+
+
+/* ==========================================
+   DISPLAY EMPLOYEE
+========================================== */
+
+function displayEmployee(employee) {
+
+
+    document
+    .getElementById("resultEmployeeId")
+    .textContent =
+        employee.employeeId || "-";
+
+
+    document
+    .getElementById("resultFullName")
+    .textContent =
+        employee.fullName || "-";
+
+
+    document
+    .getElementById("resultDepartment")
+    .textContent =
+        employee.department || "-";
+
+
+    document
+    .getElementById("resultDesignation")
+    .textContent =
+        employee.designation || "-";
+
+
+    document
+    .getElementById("resultGmail")
+    .textContent =
+        employee.gmail || "-";
+
+
+    document
+    .getElementById("resultCard")
+    .style.display =
+        "block";
+
+}
+
+
+
+/* ==========================================
+   ERROR MESSAGE
+========================================== */
+
+function showError(message) {
+
+
+    const error =
+        document
+        .getElementById("error");
+
+
+    error.textContent =
+        message;
+
+
+    error.style.display =
+        "block";
+
+}
+
+
+
+/* ==========================================
+   SEARCH AGAIN
+========================================== */
+
+function searchAgain() {
+
+
+    document
+    .getElementById("resultCard")
+    .style.display =
+        "none";
+
+
+    document
+    .getElementById("employeeId")
+    .value =
+        "";
+
+
+    document
+    .getElementById("employeeId")
+    .focus();
+
+
+    document
+    .getElementById("error")
+    .style.display =
+        "none";
+
+}
+
+
+
+/* ==========================================
+   ENTER KEY SEARCH
+========================================== */
+
+document
+.getElementById("employeeId")
+.addEventListener(
+    "keydown",
+    function(event) {
+
+        if (event.key === "Enter") {
+
+            searchEmployee();
+
+        }
+
+    }
+);
+
+</script>
+
+
+</body>
+
+</html>
+```
