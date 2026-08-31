@@ -1,3 +1,4 @@
+```html
 <!DOCTYPE html>
 <html lang="en">
 
@@ -8,10 +9,10 @@
 <meta name="viewport"
       content="width=device-width, initial-scale=1.0">
 
-<title>INCHEON KIA | Employee Search Portal</title>
+<title>INCHEON KIA | Test Drive Vehicle Search</title>
 
 <meta name="description"
-      content="INCHEON KIA Employee Search Portal">
+      content="INCHEON KIA Test Drive Vehicle Search Portal">
 
 
 <style>
@@ -23,7 +24,6 @@
 * {
 
     margin: 0;
-
     padding: 0;
 
     box-sizing: border-box;
@@ -63,16 +63,16 @@ body {
 
 
 /* =========================================
-   MAIN CONTAINER
+   CONTAINER
 ========================================= */
 
 .container {
 
     width: 100%;
 
-    max-width: 520px;
+    max-width: 550px;
 
-    background: #ffffff;
+    background: white;
 
     border-radius: 20px;
 
@@ -86,7 +86,7 @@ body {
 
 
 /* =========================================
-   COMPANY HEADER
+   COMPANY
 ========================================= */
 
 .company {
@@ -121,7 +121,7 @@ body {
 
 
 /* =========================================
-   BLUE LINE
+   LINE
 ========================================= */
 
 .line {
@@ -135,8 +135,7 @@ body {
     border-radius: 10px;
 
     margin:
-        18px
-        auto
+        18px auto
         25px;
 
 }
@@ -175,7 +174,7 @@ body {
 
 
 /* =========================================
-   SEARCH AREA
+   SEARCH
 ========================================= */
 
 .search-box {
@@ -204,6 +203,8 @@ body {
 
     outline: none;
 
+    text-transform: uppercase;
+
 }
 
 
@@ -223,7 +224,7 @@ body {
     border: none;
 
     padding:
-        0 20px;
+        0 22px;
 
     border-radius: 10px;
 
@@ -358,7 +359,7 @@ body {
 
 
 /* =========================================
-   DETAILS
+   VEHICLE DETAILS
 ========================================= */
 
 .details {
@@ -377,8 +378,7 @@ body {
     gap: 20px;
 
     padding:
-        13px
-        0;
+        14px 0;
 
     border-bottom:
         1px solid #eeeeee;
@@ -399,6 +399,8 @@ body {
 
     font-size: 14px;
 
+    font-weight: 600;
+
 }
 
 
@@ -408,7 +410,7 @@ body {
 
     font-size: 15px;
 
-    font-weight: 600;
+    font-weight: 700;
 
     text-align: right;
 
@@ -425,7 +427,7 @@ body {
 
     width: 100%;
 
-    margin-top: 18px;
+    margin-top: 20px;
 
     padding: 13px;
 
@@ -480,8 +482,7 @@ body {
     .container {
 
         padding:
-            28px
-            20px;
+            28px 20px;
 
     }
 
@@ -544,7 +545,7 @@ body {
         </h1>
 
         <p>
-            Employee Search Portal
+            Test Drive Vehicle Search Portal
         </p>
 
     </div>
@@ -557,15 +558,15 @@ body {
 
     <div class="form-title">
 
-        Search Employee
+        Search Test Drive Vehicle
 
     </div>
 
 
     <div class="subtitle">
 
-        Enter your Employee ID to view
-        employee information.
+        Enter the vehicle number to view
+        vehicle information.
 
     </div>
 
@@ -576,15 +577,16 @@ body {
 
         <input
             type="text"
-            id="employeeId"
-            placeholder="Enter Employee ID"
+            id="vehicleNumber"
+            placeholder="Enter Vehicle Number"
             autocomplete="off"
         >
+
 
         <button
             class="search-button"
             id="searchButton"
-            onclick="searchEmployee()">
+            onclick="searchVehicle()">
 
             Search
 
@@ -599,7 +601,7 @@ body {
         class="loading"
         id="loading">
 
-        Searching employee information...
+        Searching vehicle information...
 
     </div>
 
@@ -623,7 +625,7 @@ body {
         <div class="result-header">
 
             <h2>
-                Employee Information
+                Test Drive Vehicle
             </h2>
 
             <p>
@@ -636,81 +638,93 @@ body {
         <div class="details">
 
 
+            <!-- VEHICLE NUMBER -->
+
             <div class="detail-row">
 
                 <span class="detail-label">
-                    Employee ID
+                    Vehicle Number
                 </span>
 
                 <span
                     class="detail-value"
-                    id="resultEmployeeId">
+                    id="resultVehicleNumber">
                 </span>
 
             </div>
 
 
+            <!-- VEHICLE NAME -->
+
             <div class="detail-row">
 
                 <span class="detail-label">
-                    Full Name
+                    Vehicle Name
                 </span>
 
                 <span
                     class="detail-value"
-                    id="resultFullName">
+                    id="resultVehicleName">
                 </span>
 
             </div>
 
 
+            <!-- VARIANT -->
+
             <div class="detail-row">
 
                 <span class="detail-label">
-                    Department
+                    Variant
                 </span>
 
                 <span
                     class="detail-value"
-                    id="resultDepartment">
+                    id="resultVariant">
                 </span>
 
             </div>
 
 
+            <!-- FUEL -->
+
             <div class="detail-row">
 
                 <span class="detail-label">
-                    Designation
+                    Fuel
                 </span>
 
                 <span
                     class="detail-value"
-                    id="resultDesignation">
+                    id="resultFuel">
                 </span>
 
             </div>
 
 
+            <!-- BRANCH -->
+
             <div class="detail-row">
 
                 <span class="detail-label">
-                    Gmail
+                    Branch
                 </span>
 
                 <span
                     class="detail-value"
-                    id="resultGmail">
+                    id="resultBranch">
                 </span>
 
             </div>
 
+
+            <!-- SEARCH AGAIN -->
 
             <button
                 class="search-again"
                 onclick="searchAgain()">
 
-                Search Another Employee
+                Search Another Vehicle
 
             </button>
 
@@ -738,11 +752,11 @@ body {
 
 
 /* ==========================================
-   GOOGLE APPS SCRIPT WEB APP URL
+   GOOGLE APPS SCRIPT URL
 ==========================================
 
-   REPLACE THIS URL WITH YOUR
-   GOOGLE APPS SCRIPT WEB APP URL.
+   PUT YOUR DEPLOYED GOOGLE APPS SCRIPT
+   WEB APP URL HERE.
 
 ========================================== */
 
@@ -752,15 +766,15 @@ const GOOGLE_SCRIPT_URL =
 
 
 /* ==========================================
-   SEARCH EMPLOYEE
+   SEARCH VEHICLE
 ========================================== */
 
-function searchEmployee() {
+function searchVehicle() {
 
 
-    const employeeId =
+    const vehicleNumber =
         document
-        .getElementById("employeeId")
+        .getElementById("vehicleNumber")
         .value
         .trim();
 
@@ -785,13 +799,14 @@ function searchEmployee() {
         .getElementById("resultCard");
 
 
+    /* ==============================
+       VALIDATION
+    ============================== */
 
-    /* VALIDATION */
-
-    if (!employeeId) {
+    if (!vehicleNumber) {
 
         showError(
-            "Please enter an Employee ID."
+            "Please enter a vehicle number."
         );
 
         return;
@@ -799,8 +814,9 @@ function searchEmployee() {
     }
 
 
-
-    /* RESET */
+    /* ==============================
+       RESET
+    ============================== */
 
     error.style.display = "none";
 
@@ -814,17 +830,19 @@ function searchEmployee() {
         "Searching...";
 
 
-
-    /* CREATE URL */
+    /* ==============================
+       CREATE API URL
+    ============================== */
 
     const url =
         GOOGLE_SCRIPT_URL +
-        "?employeeId=" +
-        encodeURIComponent(employeeId);
+        "?vehicleNumber=" +
+        encodeURIComponent(vehicleNumber);
 
 
-
-    /* REQUEST */
+    /* ==============================
+       REQUEST
+    ============================== */
 
     fetch(url)
 
@@ -858,25 +876,28 @@ function searchEmployee() {
                 "Search";
 
 
-
-            /* EMPLOYEE FOUND */
+            /* =========================
+               VEHICLE FOUND
+            ========================= */
 
             if (data.success) {
 
-                displayEmployee(
-                    data.employee
+                displayVehicle(
+                    data.vehicle
                 );
 
             }
 
 
-            /* NOT FOUND */
+            /* =========================
+               VEHICLE NOT FOUND
+            ========================= */
 
             else {
 
                 showError(
                     data.message ||
-                    "Employee not found."
+                    "Vehicle not found."
                 );
 
             }
@@ -903,7 +924,7 @@ function searchEmployee() {
 
 
             showError(
-                "Unable to connect to the database. Please try again."
+                "Unable to connect to the database. Please try again later."
             );
 
         });
@@ -913,40 +934,40 @@ function searchEmployee() {
 
 
 /* ==========================================
-   DISPLAY EMPLOYEE
+   DISPLAY VEHICLE
 ========================================== */
 
-function displayEmployee(employee) {
+function displayVehicle(vehicle) {
 
 
     document
-    .getElementById("resultEmployeeId")
+    .getElementById("resultVehicleNumber")
     .textContent =
-        employee.employeeId || "-";
+        vehicle.vehicleNumber || "-";
 
 
     document
-    .getElementById("resultFullName")
+    .getElementById("resultVehicleName")
     .textContent =
-        employee.fullName || "-";
+        vehicle.vehicleName || "-";
 
 
     document
-    .getElementById("resultDepartment")
+    .getElementById("resultVariant")
     .textContent =
-        employee.department || "-";
+        vehicle.variant || "-";
 
 
     document
-    .getElementById("resultDesignation")
+    .getElementById("resultFuel")
     .textContent =
-        employee.designation || "-";
+        vehicle.fuel || "-";
 
 
     document
-    .getElementById("resultGmail")
+    .getElementById("resultBranch")
     .textContent =
-        employee.gmail || "-";
+        vehicle.branch || "-";
 
 
     document
@@ -995,13 +1016,13 @@ function searchAgain() {
 
 
     document
-    .getElementById("employeeId")
+    .getElementById("vehicleNumber")
     .value =
         "";
 
 
     document
-    .getElementById("employeeId")
+    .getElementById("vehicleNumber")
     .focus();
 
 
@@ -1015,18 +1036,18 @@ function searchAgain() {
 
 
 /* ==========================================
-   ENTER KEY SEARCH
+   ENTER KEY
 ========================================== */
 
 document
-.getElementById("employeeId")
+.getElementById("vehicleNumber")
 .addEventListener(
     "keydown",
     function(event) {
 
         if (event.key === "Enter") {
 
-            searchEmployee();
+            searchVehicle();
 
         }
 
