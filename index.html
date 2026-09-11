@@ -5,158 +5,162 @@
 
 <meta charset="UTF-8">
 
-<meta name="viewport"
-      content="width=device-width, initial-scale=1.0">
+<meta
+name="viewport"
+content="width=device-width, initial-scale=1.0"
+>
 
-<title>INCHEON KIA | Test Drive Vehicle Portal</title>
+<title>
+INCHEON KIA | Test Drive Vehicle Portal
+</title>
 
-<meta name="description"
-      content="INCHEON KIA Test Drive Vehicle Search and Management Portal">
+<meta
+name="description"
+content="INCHEON KIA Test Drive Vehicle Search and Branch Vehicle Management Portal"
+>
 
 <style>
 
-/* =========================================
-   RESET
-========================================= */
-
 *{
+    box-sizing:border-box;
     margin:0;
     padding:0;
-    box-sizing:border-box;
-    font-family:Arial,Helvetica,sans-serif;
 }
-
-
-/* =========================================
-   BODY
-========================================= */
 
 body{
 
-    min-height:100vh;
+    font-family:
+    Arial,
+    Helvetica,
+    sans-serif;
 
     background:
     linear-gradient(
         135deg,
-        #111827,
-        #1e3a8a
+        #f5f7fa,
+        #e9eef5
     );
 
-    padding:25px 15px;
+    color:#17202a;
+
+    min-height:100vh;
 
 }
 
 
 /* =========================================
-   CONTAINER
+   HEADER
+========================================= */
+
+.header{
+
+    background:
+    linear-gradient(
+        135deg,
+        #101820,
+        #1f2933
+    );
+
+    color:white;
+
+    padding:28px 20px;
+
+    text-align:center;
+
+    box-shadow:
+    0 5px 20px rgba(0,0,0,.15);
+
+}
+
+.header h1{
+
+    font-size:32px;
+
+    letter-spacing:2px;
+
+    margin-bottom:7px;
+
+}
+
+.header p{
+
+    opacity:.8;
+
+    font-size:15px;
+
+}
+
+
+/* =========================================
+   MAIN CONTAINER
 ========================================= */
 
 .container{
 
-    width:100%;
-    max-width:850px;
+    width:
+    min(1100px, 94%);
 
-    margin:auto;
-
-    background:white;
-
-    border-radius:20px;
-
-    padding:30px;
-
-    box-shadow:
-    0 20px 50px
-    rgba(0,0,0,0.25);
+    margin:
+    30px auto 60px;
 
 }
 
 
 /* =========================================
-   COMPANY
+   NAVIGATION
 ========================================= */
 
-.company{
+.nav{
 
-    text-align:center;
-
-}
-
-.company h1{
-
-    color:#123c8c;
-
-    font-size:30px;
-
-    font-weight:800;
-
-    letter-spacing:1px;
-
-}
-
-.company p{
-
-    color:#666;
-
-    margin-top:8px;
-
-    font-size:14px;
-
-}
-
-
-.line{
-
-    width:65px;
-
-    height:4px;
-
-    background:#123c8c;
-
-    border-radius:10px;
-
-    margin:18px auto 25px;
-
-}
-
-
-/* =========================================
-   TABS
-========================================= */
-
-.tabs{
-
-    display:grid;
-
-    grid-template-columns:
-    repeat(3,1fr);
+    display:flex;
 
     gap:10px;
 
     margin-bottom:25px;
 
+    flex-wrap:wrap;
+
 }
 
-.tab-button{
+.nav button{
+
+    flex:1;
+
+    min-width:180px;
 
     border:none;
 
-    padding:14px 8px;
+    padding:15px 18px;
 
-    border-radius:10px;
+    border-radius:12px;
 
-    background:#eef2ff;
+    background:white;
 
-    color:#123c8c;
+    color:#273444;
 
-    font-weight:700;
+    font-size:15px;
+
+    font-weight:bold;
 
     cursor:pointer;
 
+    box-shadow:
+    0 4px 15px rgba(0,0,0,.07);
+
+    transition:.2s;
+
 }
 
-.tab-button.active{
+.nav button:hover{
 
-    background:#123c8c;
+    transform:
+    translateY(-2px);
+
+}
+
+.nav button.active{
+
+    background:#101820;
 
     color:white;
 
@@ -181,30 +185,35 @@ body{
 
 
 /* =========================================
-   TITLES
+   CARD
 ========================================= */
 
-.form-title{
+.card{
 
-    text-align:center;
+    background:white;
 
-    color:#222;
+    border-radius:18px;
 
-    font-size:22px;
+    padding:28px;
 
-    font-weight:700;
+    box-shadow:
+    0 10px 30px rgba(0,0,0,.08);
 
-    margin-bottom:8px;
+    margin-bottom:22px;
 
 }
 
-.subtitle{
+.card h2{
 
-    text-align:center;
+    margin-bottom:8px;
 
-    color:#777;
+    font-size:24px;
 
-    font-size:14px;
+}
+
+.card .subtitle{
+
+    color:#68737d;
 
     margin-bottom:25px;
 
@@ -217,7 +226,7 @@ body{
 
 .form-group{
 
-    margin-bottom:16px;
+    margin-bottom:18px;
 
 }
 
@@ -225,13 +234,13 @@ body{
 
     display:block;
 
-    font-size:13px;
+    font-size:14px;
 
-    font-weight:700;
-
-    color:#444;
+    font-weight:bold;
 
     margin-bottom:7px;
+
+    color:#34495e;
 
 }
 
@@ -240,12 +249,12 @@ select{
 
     width:100%;
 
-    padding:13px;
+    padding:14px 15px;
 
     border:
-    1px solid #d1d5db;
+    1px solid #d6dce2;
 
-    border-radius:9px;
+    border-radius:10px;
 
     font-size:15px;
 
@@ -258,11 +267,11 @@ select{
 input:focus,
 select:focus{
 
-    border-color:#123c8c;
+    border-color:#101820;
 
     box-shadow:
     0 0 0 3px
-    rgba(18,60,140,0.1);
+    rgba(16,24,32,.08);
 
 }
 
@@ -271,58 +280,72 @@ select:focus{
    BUTTONS
 ========================================= */
 
-.primary-button{
-
-    width:100%;
+.btn{
 
     border:none;
 
-    padding:14px;
+    border-radius:10px;
 
-    border-radius:9px;
-
-    background:#123c8c;
-
-    color:white;
+    padding:14px 20px;
 
     font-size:15px;
 
-    font-weight:700;
+    font-weight:bold;
 
     cursor:pointer;
 
-}
-
-.primary-button:hover{
-
-    background:#0d2f70;
+    transition:.2s;
 
 }
 
-.secondary-button{
+.btn:hover{
+
+    transform:
+    translateY(-1px);
+
+}
+
+.btn-primary{
+
+    background:#101820;
+
+    color:white;
+
+}
+
+.btn-success{
+
+    background:#16803c;
+
+    color:white;
+
+}
+
+.btn-secondary{
+
+    background:#e8edf2;
+
+    color:#273444;
+
+}
+
+.btn-danger{
+
+    background:#c0392b;
+
+    color:white;
+
+}
+
+.btn-full{
 
     width:100%;
-
-    padding:12px;
-
-    border:
-    1px solid #123c8c;
-
-    background:white;
-
-    color:#123c8c;
-
-    border-radius:9px;
-
-    font-weight:700;
-
-    cursor:pointer;
 
 }
 
 
 /* =========================================
-   SEARCH BOX
+   SEARCH
 ========================================= */
 
 .search-box{
@@ -331,35 +354,136 @@ select:focus{
 
     gap:10px;
 
-    margin-bottom:20px;
-
 }
 
 .search-box input{
 
     flex:1;
 
-    text-transform:uppercase;
+}
+
+.search-box button{
+
+    min-width:140px;
 
 }
 
-.search-button{
 
-    border:none;
+/* =========================================
+   RESULT
+========================================= */
 
-    padding:0 22px;
+.result{
+
+    display:none;
+
+}
+
+.result.show{
+
+    display:block;
+
+}
+
+.vehicle-title{
+
+    font-size:25px;
+
+    font-weight:bold;
+
+    margin-bottom:20px;
+
+}
+
+.vehicle-grid{
+
+    display:grid;
+
+    grid-template-columns:
+    repeat(2,1fr);
+
+    gap:14px;
+
+}
+
+.vehicle-item{
+
+    background:#f5f7f9;
+
+    padding:18px;
+
+    border-radius:12px;
+
+}
+
+.vehicle-item .label{
+
+    color:#71808f;
+
+    font-size:12px;
+
+    text-transform:uppercase;
+
+    font-weight:bold;
+
+    margin-bottom:5px;
+
+}
+
+.vehicle-item .value{
+
+    font-size:17px;
+
+    font-weight:bold;
+
+}
+
+
+/* =========================================
+   STATUS
+========================================= */
+
+.status{
+
+    display:none;
+
+    padding:14px 16px;
 
     border-radius:10px;
 
-    background:#123c8c;
+    margin-top:18px;
 
-    color:white;
+    font-size:14px;
 
-    font-size:15px;
+}
 
-    font-weight:700;
+.status.show{
 
-    cursor:pointer;
+    display:block;
+
+}
+
+.status.error{
+
+    background:#fdecea;
+
+    color:#a93226;
+
+}
+
+.status.success{
+
+    background:#eaf8ef;
+
+    color:#18733a;
+
+}
+
+.status.info{
+
+    background:#eaf2f8;
+
+    color:#21618c;
 
 }
 
@@ -374,242 +498,171 @@ select:focus{
 
     text-align:center;
 
-    padding:15px;
-
-    color:#123c8c;
-
-    font-weight:600;
-
-}
-
-
-/* =========================================
-   ERROR
-========================================= */
-
-.error{
-
-    display:none;
-
-    background:#fee2e2;
-
-    color:#b91c1c;
-
-    padding:13px;
-
-    border-radius:9px;
-
-    text-align:center;
-
-    margin-bottom:18px;
-
-    font-size:14px;
-
-}
-
-
-/* =========================================
-   SUCCESS
-========================================= */
-
-.success{
-
-    display:none;
-
-    background:#dcfce7;
-
-    color:#166534;
-
-    padding:13px;
-
-    border-radius:9px;
-
-    text-align:center;
-
-    margin-bottom:18px;
-
-    font-size:14px;
-
-}
-
-
-/* =========================================
-   VEHICLE RESULT
-========================================= */
-
-.result-card{
-
-    display:none;
-
-    border:
-    1px solid #e5e7eb;
-
-    border-radius:15px;
-
-    overflow:hidden;
-
-    margin-top:15px;
-
-}
-
-.result-header{
-
-    background:#123c8c;
-
-    color:white;
-
-    padding:18px;
-
-    text-align:center;
-
-}
-
-.result-header h2{
-
-    font-size:20px;
-
-}
-
-.details{
-
     padding:20px;
 
 }
 
-.detail-row{
+.loading.show{
 
-    display:flex;
-
-    justify-content:space-between;
-
-    gap:20px;
-
-    padding:13px 0;
-
-    border-bottom:
-    1px solid #eeeeee;
-
-}
-
-.detail-row:last-child{
-
-    border-bottom:none;
-
-}
-
-.detail-label{
-
-    color:#777;
-
-    font-size:14px;
-
-    font-weight:600;
-
-}
-
-.detail-value{
-
-    color:#222;
-
-    font-size:15px;
-
-    font-weight:700;
-
-    text-align:right;
+    display:block;
 
 }
 
 
 /* =========================================
-   BRANCH VEHICLE TABLE
+   BRANCH LIST
+========================================= */
+
+.branch-toolbar{
+
+    display:grid;
+
+    grid-template-columns:
+    1fr auto;
+
+    gap:10px;
+
+    margin-bottom:20px;
+
+}
+
+.count-box{
+
+    margin-bottom:15px;
+
+    color:#66717c;
+
+    font-weight:bold;
+
+}
+
+
+/* =========================================
+   TABLE
 ========================================= */
 
 .table-wrapper{
 
-    overflow-x:auto;
+    width:100%;
 
-    margin-top:20px;
+    overflow-x:auto;
 
 }
 
-.vehicle-table{
+table{
 
     width:100%;
 
     border-collapse:collapse;
 
-    min-width:600px;
+    min-width:650px;
 
 }
 
-.vehicle-table th{
+th{
 
-    background:#123c8c;
+    background:#101820;
 
     color:white;
 
-    padding:12px;
-
-    font-size:13px;
+    padding:14px;
 
     text-align:left;
 
+    font-size:13px;
+
 }
 
-.vehicle-table td{
+td{
 
-    padding:11px;
+    padding:14px;
 
     border-bottom:
-    1px solid #e5e7eb;
+    1px solid #e4e8ec;
 
     font-size:14px;
 
 }
 
-.vehicle-table tr:hover{
+tr:hover td{
 
-    background:#f5f7ff;
-
-}
-
-.vehicle-count{
-
-    margin-top:15px;
-
-    font-size:14px;
-
-    color:#555;
-
-    font-weight:700;
+    background:#f8fafb;
 
 }
 
 
 /* =========================================
-   ADD FORM
+   ADMIN
 ========================================= */
 
-.add-box{
+.admin-lock{
 
-    background:#f8fafc;
+    max-width:500px;
 
-    border:
-    1px solid #e5e7eb;
-
-    padding:20px;
-
-    border-radius:14px;
+    margin:auto;
 
 }
 
-.add-box h3{
+.admin-content{
 
-    color:#123c8c;
+    display:none;
 
-    margin-bottom:15px;
+}
 
-    font-size:18px;
+.admin-content.show{
+
+    display:block;
+
+}
+
+.admin-header{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    gap:10px;
+
+    margin-bottom:25px;
+
+}
+
+.admin-header h2{
+
+    margin:0;
+
+}
+
+
+/* =========================================
+   TWO COLUMN ADMIN
+========================================= */
+
+.admin-grid{
+
+    display:grid;
+
+    grid-template-columns:
+    repeat(2,1fr);
+
+    gap:20px;
+
+}
+
+
+/* =========================================
+   DIVIDER
+========================================= */
+
+.divider{
+
+    height:1px;
+
+    background:#e4e8ec;
+
+    margin:28px 0;
 
 }
 
@@ -622,36 +675,30 @@ select:focus{
 
     text-align:center;
 
-    color:#999;
+    padding:25px 15px;
 
-    font-size:12px;
+    color:#7b8791;
 
-    margin-top:25px;
+    font-size:13px;
 
 }
 
 
 /* =========================================
-   MOBILE
+   RESPONSIVE
 ========================================= */
 
-@media(max-width:600px){
+@media(max-width:700px){
 
-    .container{
-
-        padding:25px 18px;
-
-    }
-
-    .company h1{
+    .header h1{
 
         font-size:25px;
 
     }
 
-    .tabs{
+    .card{
 
-        grid-template-columns:1fr;
+        padding:20px;
 
     }
 
@@ -661,23 +708,27 @@ select:focus{
 
     }
 
-    .search-button{
+    .search-box button{
 
-        padding:13px;
-
-    }
-
-    .detail-row{
-
-        flex-direction:column;
-
-        gap:5px;
+        width:100%;
 
     }
 
-    .detail-value{
+    .vehicle-grid{
 
-        text-align:left;
+        grid-template-columns:1fr;
+
+    }
+
+    .admin-grid{
+
+        grid-template-columns:1fr;
+
+    }
+
+    .branch-toolbar{
+
+        grid-template-columns:1fr;
 
     }
 
@@ -691,81 +742,71 @@ select:focus{
 <body>
 
 
-<div class="container">
-
-
 <!-- =========================================
-     COMPANY
+     HEADER
 ========================================= -->
 
-<div class="company">
+<header class="header">
 
 <h1>INCHEON KIA</h1>
 
-<p>Test Drive Vehicle Management Portal</p>
+<p>
+Test Drive Vehicle Search & Database Portal
+</p>
 
-</div>
+</header>
 
 
-<div class="line"></div>
+<main class="container">
 
 
 <!-- =========================================
-     TABS
+     NAVIGATION
 ========================================= -->
 
-<div class="tabs">
+<nav class="nav">
 
 <button
-class="tab-button active"
-onclick="openTab('searchTab',this)">
-
+class="active"
+onclick="showSection('searchSection',this)"
+>
 🔎 Search Vehicle
-
 </button>
 
-
 <button
-class="tab-button"
-onclick="openTab('branchTab',this)">
-
+onclick="showSection('branchSection',this)"
+>
 🏢 Branch Vehicles
-
 </button>
-
 
 <button
-class="tab-button"
-onclick="openTab('addTab',this)">
-
-➕ Add Vehicle
-
+onclick="showSection('adminSection',this)"
+>
+➕ Add Data
 </button>
 
-</div>
+</nav>
 
 
 <!-- =========================================
-     SEARCH TAB
+     SEARCH SECTION
 ========================================= -->
 
-<div
-id="searchTab"
-class="section active">
+<section
+id="searchSection"
+class="section active"
+>
 
+<div class="card">
 
-<div class="form-title">
-
+<h2>
 Search Test Drive Vehicle
+</h2>
 
-</div>
-
-
-<div class="subtitle">
-
-Enter the vehicle number to view vehicle information.
-
-</div>
+<p class="subtitle">
+Enter the vehicle registration number to find
+the vehicle details.
+</p>
 
 
 <div class="search-box">
@@ -773,409 +814,473 @@ Enter the vehicle number to view vehicle information.
 <input
 type="text"
 id="vehicleNumber"
-placeholder="Enter Vehicle Number"
-autocomplete="off">
-
+placeholder="Enter vehicle number"
+autocomplete="off"
+>
 
 <button
-class="search-button"
-id="searchButton"
-onclick="searchVehicle()">
-
-Search
-
+class="btn btn-primary"
+onclick="searchVehicle()"
+>
+SEARCH
 </button>
 
 </div>
 
 
 <div
+id="searchStatus"
+class="status"
+></div>
+
+
+<div
+id="searchLoading"
 class="loading"
-id="searchLoading">
-
-Searching vehicle information...
+>
+Searching vehicle...
+</div>
 
 </div>
 
+
+<!-- RESULT -->
 
 <div
-class="error"
-id="searchError">
-</div>
-
+id="vehicleResult"
+class="card result"
+>
 
 <div
-class="result-card"
-id="resultCard">
-
-
-<div class="result-header">
-
-<h2>Test Drive Vehicle</h2>
-
-<p>INCHEON KIA</p>
-
+id="vehicleTitle"
+class="vehicle-title"
+>
+Vehicle Details
 </div>
 
 
-<div class="details">
+<div class="vehicle-grid">
 
 
-<div class="detail-row">
+<div class="vehicle-item">
 
-<span class="detail-label">
+<div class="label">
 Vehicle Number
-</span>
+</div>
 
-<span
-class="detail-value"
-id="resultVehicleNumber">
-</span>
+<div
+id="resultVehicleNumber"
+class="value"
+>
+-
+</div>
 
 </div>
 
 
-<div class="detail-row">
+<div class="vehicle-item">
 
-<span class="detail-label">
+<div class="label">
 Vehicle Name
-</span>
+</div>
 
-<span
-class="detail-value"
-id="resultVehicleName">
-</span>
+<div
+id="resultVehicleName"
+class="value"
+>
+-
+</div>
 
 </div>
 
 
-<div class="detail-row">
+<div class="vehicle-item">
 
-<span class="detail-label">
+<div class="label">
 Variant
-</span>
+</div>
 
-<span
-class="detail-value"
-id="resultVariant">
-</span>
+<div
+id="resultVariant"
+class="value"
+>
+-
+</div>
 
 </div>
 
 
-<div class="detail-row">
+<div class="vehicle-item">
 
-<span class="detail-label">
+<div class="label">
 Fuel
-</span>
+</div>
 
-<span
-class="detail-value"
-id="resultFuel">
-</span>
+<div
+id="resultFuel"
+class="value"
+>
+-
+</div>
 
 </div>
 
 
-<div class="detail-row">
+<div class="vehicle-item">
 
-<span class="detail-label">
+<div class="label">
 Branch
-</span>
+</div>
 
-<span
-class="detail-value"
-id="resultBranch">
-</span>
+<div
+id="resultBranch"
+class="value"
+>
+-
+</div>
 
 </div>
 
+
+</div>
+
+<br>
 
 <button
-class="secondary-button"
-onclick="searchAgain()">
-
+class="btn btn-secondary"
+onclick="clearSearch()"
+>
 Search Another Vehicle
-
 </button>
 
-
 </div>
 
-</div>
-
-</div>
+</section>
 
 
 <!-- =========================================
-     BRANCH TAB
+     BRANCH SECTION
 ========================================= -->
 
-<div
-id="branchTab"
-class="section">
+<section
+id="branchSection"
+class="section"
+>
 
+<div class="card">
 
-<div class="form-title">
-
+<h2>
 Vehicles by Branch
+</h2>
 
-</div>
-
-
-<div class="subtitle">
-
-Select a branch to see all Test Drive vehicles available there.
-
-</div>
+<p class="subtitle">
+Select a branch to view all available
+test drive vehicles in that branch.
+</p>
 
 
-<div class="form-group">
+<div class="branch-toolbar">
 
-<label>Select Branch</label>
-
-<select
-id="branchSelect">
+<select id="branchSelect">
 
 <option value="">
--- Select Branch --
+Select Branch
 </option>
 
 </select>
 
-</div>
-
 
 <button
-class="primary-button"
-onclick="loadBranchVehicles()">
-
-View Branch Vehicles
-
+class="btn btn-primary"
+onclick="loadBranchVehicles()"
+>
+VIEW VEHICLES
 </button>
 
+</div>
+
 
 <div
+id="branchStatus"
+class="status"
+></div>
+
+
+<div
+id="branchLoading"
 class="loading"
-id="branchLoading">
-
-Loading branch vehicles...
-
+>
+Loading vehicles...
 </div>
 
 
 <div
-class="error"
-id="branchError">
-</div>
-
+id="branchResults"
+style="display:none"
+>
 
 <div
-class="vehicle-count"
-id="vehicleCount">
+id="branchCount"
+class="count-box"
+>
 </div>
 
 
 <div class="table-wrapper">
 
-<table
-class="vehicle-table"
-id="vehicleTable"
-style="display:none;">
+<table>
 
 <thead>
 
 <tr>
 
-<th>Vehicle Number</th>
+<th>VEHICLE NUMBER</th>
 
-<th>Vehicle Name</th>
+<th>VEHICLE NAME</th>
 
-<th>Variant</th>
+<th>VARIANT</th>
 
-<th>Fuel</th>
+<th>FUEL</th>
 
-<th>Branch</th>
+<th>BRANCH</th>
 
 </tr>
 
 </thead>
 
 <tbody
-id="vehicleTableBody">
-
+id="branchTableBody"
+>
 </tbody>
 
 </table>
 
 </div>
 
+</div>
 
 </div>
+
+</section>
 
 
 <!-- =========================================
-     ADD VEHICLE TAB
+     ADMIN SECTION
 ========================================= -->
 
-<div
-id="addTab"
-class="section">
+<section
+id="adminSection"
+class="section"
+>
 
 
-<div class="form-title">
-
-Add Branch / Test Drive Vehicle
-
-</div>
-
-
-<div class="subtitle">
-
-Add new branch information or add a Test Drive vehicle to the database.
-
-</div>
-
+<!-- ADMIN LOGIN -->
 
 <div
-class="success"
-id="addSuccess">
-</div>
+id="adminLock"
+class="card admin-lock"
+>
 
+<h2>
+Admin / Branch Data Entry
+</h2>
 
-<div
-class="error"
-id="addError">
-</div>
+<p class="subtitle">
+Authorized users can add branches and
+test drive vehicle details.
+</p>
 
-
-<!-- ADMIN PIN -->
-
-<div class="add-box">
-
-<h3>Database Access</h3>
 
 <div class="form-group">
 
-<label>Admin PIN</label>
+<label>
+Admin PIN
+</label>
 
 <input
 type="password"
 id="adminPin"
-placeholder="Enter admin PIN">
-
-</div>
-
-</div>
-
-
-<br>
-
-
-<!-- ADD BRANCH -->
-
-<div class="add-box">
-
-<h3>➕ Add New Branch</h3>
-
-
-<div class="form-group">
-
-<label>Branch Name</label>
-
-<input
-type="text"
-id="newBranch"
-placeholder="Enter branch name">
+placeholder="Enter admin PIN"
+>
 
 </div>
 
 
 <button
-class="primary-button"
-onclick="addBranch()">
+class="btn btn-primary btn-full"
+onclick="unlockAdmin()"
+>
+UNLOCK
+</button>
 
-Save Branch
 
+<div
+id="adminLoginStatus"
+class="status"
+></div>
+
+</div>
+
+
+<!-- ADMIN CONTENT -->
+
+<div
+id="adminContent"
+class="admin-content"
+>
+
+
+<div class="admin-header">
+
+<h2>
+Database Management
+</h2>
+
+<button
+class="btn btn-danger"
+onclick="lockAdmin()"
+>
+LOCK
 </button>
 
 </div>
 
 
-<br>
+<div class="admin-grid">
+
+
+<!-- ADD BRANCH -->
+
+<div class="card">
+
+<h2>
+Add Branch
+</h2>
+
+<p class="subtitle">
+Create a new showroom branch.
+</p>
+
+
+<div class="form-group">
+
+<label>
+Branch Name
+</label>
+
+<input
+type="text"
+id="newBranch"
+placeholder="Example: KALOOR"
+>
+
+</div>
+
+
+<button
+class="btn btn-success btn-full"
+onclick="addBranch()"
+>
+ADD BRANCH
+</button>
+
+
+<div
+id="addBranchStatus"
+class="status"
+></div>
+
+</div>
 
 
 <!-- ADD VEHICLE -->
 
-<div class="add-box">
+<div class="card">
 
-<h3>🚗 Add Test Drive Vehicle</h3>
+<h2>
+Add TD Vehicle
+</h2>
+
+<p class="subtitle">
+Add a new test drive vehicle to the database.
+</p>
 
 
 <div class="form-group">
 
-<label>Vehicle Number</label>
+<label>
+Vehicle Number
+</label>
 
 <input
 type="text"
 id="addVehicleNumber"
-placeholder="Example: KL01AB1234">
+placeholder="Example: KL01AB1234"
+>
 
 </div>
 
 
 <div class="form-group">
 
-<label>Vehicle Name</label>
+<label>
+Vehicle Name
+</label>
 
 <input
 type="text"
 id="addVehicleName"
-placeholder="Example: Seltos">
+placeholder="Example: SELTOS"
+>
 
 </div>
 
 
 <div class="form-group">
 
-<label>Variant</label>
+<label>
+Variant
+</label>
 
 <input
 type="text"
 id="addVariant"
-placeholder="Example: HTK Plus">
+placeholder="Example: HTK PLUS"
+>
 
 </div>
 
 
 <div class="form-group">
 
-<label>Fuel</label>
+<label>
+Fuel
+</label>
 
 <select id="addFuel">
 
 <option value="">
--- Select Fuel --
+Select Fuel
 </option>
 
-<option value="Petrol">
-Petrol
+<option value="PETROL">
+PETROL
 </option>
 
-<option value="Diesel">
-Diesel
+<option value="DIESEL">
+DIESEL
 </option>
 
 <option value="CNG">
 CNG
 </option>
 
-<option value="Electric">
-Electric
+<option value="ELECTRIC">
+ELECTRIC
 </option>
 
-<option value="Hybrid">
-Hybrid
+<option value="HYBRID">
+HYBRID
 </option>
 
 </select>
@@ -1185,12 +1290,14 @@ Hybrid
 
 <div class="form-group">
 
-<label>Branch</label>
+<label>
+Branch
+</label>
 
 <select id="addBranchSelect">
 
 <option value="">
--- Select Branch --
+Select Branch
 </option>
 
 </select>
@@ -1199,68 +1306,98 @@ Hybrid
 
 
 <button
-class="primary-button"
-onclick="addVehicle()">
-
-Save Test Drive Vehicle
-
+class="btn btn-success btn-full"
+onclick="addVehicle()"
+>
+ADD VEHICLE
 </button>
 
-</div>
 
-
-</div>
-
-
-<!-- FOOTER -->
-
-<div class="footer">
-
-INCHEON KIA • Test Drive Vehicle Management System
+<div
+id="addVehicleStatus"
+class="status"
+></div>
 
 </div>
 
+</div>
 
 </div>
+
+</section>
+
+
+</main>
+
+
+<footer class="footer">
+
+INCHEON KIA • Test Drive Vehicle Portal
+
+</footer>
+
 
 
 <script>
 
 
-/* =========================================
-   GOOGLE APPS SCRIPT URL
-========================================= */
+/* =====================================================
+   IMPORTANT:
+   PASTE YOUR NEW APPS SCRIPT WEB APP URL HERE
+===================================================== */
 
 const GOOGLE_SCRIPT_URL =
-"https://script.google.com/macros/s/AKfycbz49homfl5HeR_sfQYmNjUhgfRev-Z8TIBWj3ktjJS_LqBgDk0EMRCKrx539tMtHNgr/exec";
+"https://script.google.com/macros/s/AKfycbxvp0OZreO_gag2-AMLZ94bKga2aRPqp4DUSh3FcSVxL_x4Vxq5q21SZcYAJaYUyVO7/exec";
 
 
-/* =========================================
-   TAB SYSTEM
-========================================= */
+/* =====================================================
+   GLOBAL ADMIN PIN
+===================================================== */
 
-function openTab(tabId,button){
+let currentAdminPin = "";
+
+
+/* =====================================================
+   SECTION NAVIGATION
+===================================================== */
+
+function showSection(sectionId, button) {
+
 
     document
     .querySelectorAll(".section")
-    .forEach(section=>{
+    .forEach(function(section){
+
         section.classList.remove("active");
+
     });
 
+
     document
-    .querySelectorAll(".tab-button")
-    .forEach(btn=>{
+    .querySelectorAll(".nav button")
+    .forEach(function(btn){
+
         btn.classList.remove("active");
+
     });
 
+
     document
-    .getElementById(tabId)
+    .getElementById(sectionId)
     .classList.add("active");
+
 
     button.classList.add("active");
 
-    if(tabId==="branchTab" ||
-       tabId==="addTab"){
+
+    if(sectionId === "branchSection"){
+
+        loadBranches();
+
+    }
+
+
+    if(sectionId === "adminSection"){
 
         loadBranches();
 
@@ -1269,39 +1406,54 @@ function openTab(tabId,button){
 }
 
 
-/* =========================================
-   SEARCH VEHICLE
-========================================= */
+/* =====================================================
+   CHECK API URL
+===================================================== */
 
-function searchVehicle(){
+function checkApiUrl(){
+
+    if(
+        GOOGLE_SCRIPT_URL.includes(
+            "PASTE_YOUR_NEW"
+        )
+    ){
+
+        alert(
+            "Please add your new Google Apps Script Web App URL in the HTML."
+        );
+
+        return false;
+
+    }
+
+    return true;
+
+}
+
+
+/* =====================================================
+   SEARCH VEHICLE
+===================================================== */
+
+async function searchVehicle(){
+
+
+    if(!checkApiUrl()) return;
+
 
     const vehicleNumber =
-    document
-    .getElementById("vehicleNumber")
-    .value
-    .trim();
-
-    const button =
-    document
-    .getElementById("searchButton");
-
-    const loading =
-    document
-    .getElementById("searchLoading");
-
-    const error =
-    document
-    .getElementById("searchError");
-
-    const resultCard =
-    document
-    .getElementById("resultCard");
+        document
+        .getElementById("vehicleNumber")
+        .value
+        .trim();
 
 
     if(!vehicleNumber){
 
-        showSearchError(
-        "Please enter a vehicle number."
+        showStatus(
+            "searchStatus",
+            "Please enter a vehicle number.",
+            "error"
         );
 
         return;
@@ -1309,137 +1461,143 @@ function searchVehicle(){
     }
 
 
-    error.style.display="none";
-
-    resultCard.style.display="none";
-
-    loading.style.display="block";
-
-    button.disabled=true;
-
-    button.textContent="Searching...";
+    document
+    .getElementById("vehicleResult")
+    .classList.remove("show");
 
 
-    const url =
-    GOOGLE_SCRIPT_URL +
-    "?action=searchVehicle" +
-    "&vehicleNumber=" +
-    encodeURIComponent(vehicleNumber);
+    document
+    .getElementById("searchLoading")
+    .classList.add("show");
 
 
-    fetch(url)
+    hideStatus("searchStatus");
 
-    .then(response=>{
 
-        if(!response.ok){
+    try{
 
-            throw new Error("Network error");
 
-        }
+        const url =
+            GOOGLE_SCRIPT_URL +
+            "?action=searchVehicle" +
+            "&vehicleNumber=" +
+            encodeURIComponent(vehicleNumber);
 
-        return response.json();
 
-    })
+        const response =
+            await fetch(url);
 
-    .then(data=>{
 
-        loading.style.display="none";
+        const data =
+            await response.json();
 
-        button.disabled=false;
 
-        button.textContent="Search";
+        document
+        .getElementById("searchLoading")
+        .classList.remove("show");
 
 
         if(data.success){
 
             displayVehicle(data.vehicle);
 
-        }else{
+        }
+        else{
 
-            showSearchError(
-            data.message ||
-            "Vehicle not found."
+            showStatus(
+                "searchStatus",
+                data.message ||
+                "Vehicle not found.",
+                "error"
             );
 
         }
 
-    })
 
-    .catch(error=>{
+    }
+    catch(error){
 
-        console.error(error);
+        document
+        .getElementById("searchLoading")
+        .classList.remove("show");
 
-        loading.style.display="none";
 
-        button.disabled=false;
-
-        button.textContent="Search";
-
-        showSearchError(
-        "Unable to connect to the database. Please try again later."
+        showStatus(
+            "searchStatus",
+            "Unable to connect to the database. Please try again later.",
+            "error"
         );
 
-    });
+    }
 
 }
 
 
-/* =========================================
+/* =====================================================
    DISPLAY VEHICLE
-========================================= */
+===================================================== */
 
 function displayVehicle(vehicle){
+
 
     document
     .getElementById("resultVehicleNumber")
     .textContent =
-    vehicle.vehicleNumber || "-";
+        vehicle.vehicleNumber || "-";
 
 
     document
     .getElementById("resultVehicleName")
     .textContent =
-    vehicle.vehicleName || "-";
+        vehicle.vehicleName || "-";
 
 
     document
     .getElementById("resultVariant")
     .textContent =
-    vehicle.variant || "-";
+        vehicle.variant || "-";
 
 
     document
     .getElementById("resultFuel")
     .textContent =
-    vehicle.fuel || "-";
+        vehicle.fuel || "-";
 
 
     document
     .getElementById("resultBranch")
     .textContent =
-    vehicle.branch || "-";
+        vehicle.branch || "-";
 
 
     document
-    .getElementById("resultCard")
-    .style.display="block";
+    .getElementById("vehicleResult")
+    .classList.add("show");
+
+
+    hideStatus("searchStatus");
 
 }
 
 
-/* =========================================
-   SEARCH AGAIN
-========================================= */
+/* =====================================================
+   CLEAR SEARCH
+===================================================== */
 
-function searchAgain(){
-
-    document
-    .getElementById("resultCard")
-    .style.display="none";
+function clearSearch(){
 
     document
     .getElementById("vehicleNumber")
-    .value="";
+    .value = "";
+
+
+    document
+    .getElementById("vehicleResult")
+    .classList.remove("show");
+
+
+    hideStatus("searchStatus");
+
 
     document
     .getElementById("vehicleNumber")
@@ -1448,22 +1606,40 @@ function searchAgain(){
 }
 
 
-/* =========================================
+/* =====================================================
    LOAD BRANCHES
-========================================= */
+===================================================== */
 
-function loadBranches(){
+async function loadBranches(){
 
-    fetch(
-        GOOGLE_SCRIPT_URL +
-        "?action=getBranches"
-    )
 
-    .then(response=>response.json())
+    if(!checkApiUrl()) return;
 
-    .then(data=>{
+
+    try{
+
+
+        const url =
+            GOOGLE_SCRIPT_URL +
+            "?action=getBranches";
+
+
+        const response =
+            await fetch(url);
+
+
+        const data =
+            await response.json();
+
 
         if(!data.success){
+
+            showStatus(
+                "branchStatus",
+                data.message ||
+                "Unable to load branches.",
+                "error"
+            );
 
             return;
 
@@ -1471,181 +1647,191 @@ function loadBranches(){
 
 
         const branchSelect =
-        document.getElementById("branchSelect");
+            document
+            .getElementById("branchSelect");
+
 
         const addBranchSelect =
-        document.getElementById("addBranchSelect");
-
-
-        const currentBranch =
-        branchSelect.value;
+            document
+            .getElementById("addBranchSelect");
 
 
         branchSelect.innerHTML =
-        '<option value="">-- Select Branch --</option>';
+            '<option value="">Select Branch</option>';
+
 
         addBranchSelect.innerHTML =
-        '<option value="">-- Select Branch --</option>';
+            '<option value="">Select Branch</option>';
 
 
-        data.branches.forEach(branch=>{
+        data.branches.forEach(function(branch){
+
 
             const option1 =
-            document.createElement("option");
+                document.createElement("option");
 
-            option1.value=branch;
+            option1.value = branch;
 
-            option1.textContent=branch;
+            option1.textContent = branch;
 
             branchSelect.appendChild(option1);
 
 
             const option2 =
-            document.createElement("option");
+                document.createElement("option");
 
-            option2.value=branch;
+            option2.value = branch;
 
-            option2.textContent=branch;
+            option2.textContent = branch;
 
             addBranchSelect.appendChild(option2);
 
         });
 
 
-        branchSelect.value=currentBranch;
+    }
+    catch(error){
 
-    })
+        showStatus(
+            "branchStatus",
+            "Unable to load branches.",
+            "error"
+        );
 
-    .catch(error=>{
-
-        console.error(error);
-
-    });
+    }
 
 }
 
 
-/* =========================================
-   LOAD BRANCH VEHICLES
-========================================= */
+/* =====================================================
+   LOAD VEHICLES BY BRANCH
+===================================================== */
 
-function loadBranchVehicles(){
+async function loadBranchVehicles(){
+
+
+    if(!checkApiUrl()) return;
+
 
     const branch =
-    document
-    .getElementById("branchSelect")
-    .value;
-
-
-    const loading =
-    document
-    .getElementById("branchLoading");
-
-    const error =
-    document
-    .getElementById("branchError");
-
-    const table =
-    document
-    .getElementById("vehicleTable");
-
-    const tbody =
-    document
-    .getElementById("vehicleTableBody");
-
-    const count =
-    document
-    .getElementById("vehicleCount");
+        document
+        .getElementById("branchSelect")
+        .value;
 
 
     if(!branch){
 
-        error.textContent =
-        "Please select a branch.";
-
-        error.style.display="block";
+        showStatus(
+            "branchStatus",
+            "Please select a branch.",
+            "error"
+        );
 
         return;
 
     }
 
 
-    error.style.display="none";
-
-    table.style.display="none";
-
-    loading.style.display="block";
+    document
+    .getElementById("branchLoading")
+    .classList.add("show");
 
 
-    const url =
-    GOOGLE_SCRIPT_URL +
-    "?action=getVehiclesByBranch" +
-    "&branch=" +
-    encodeURIComponent(branch);
+    document
+    .getElementById("branchResults")
+    .style.display = "none";
 
 
-    fetch(url)
+    hideStatus("branchStatus");
 
-    .then(response=>response.json())
 
-    .then(data=>{
+    try{
 
-        loading.style.display="none";
+
+        const url =
+            GOOGLE_SCRIPT_URL +
+            "?action=getVehiclesByBranch" +
+            "&branch=" +
+            encodeURIComponent(branch);
+
+
+        const response =
+            await fetch(url);
+
+
+        const data =
+            await response.json();
+
+
+        document
+        .getElementById("branchLoading")
+        .classList.remove("show");
 
 
         if(!data.success){
 
-            error.textContent =
-            data.message ||
-            "Unable to load vehicles.";
-
-            error.style.display="block";
-
-            return;
-
-        }
-
-
-        tbody.innerHTML="";
-
-
-        if(data.vehicles.length===0){
-
-            count.textContent =
-            "No vehicles found in this branch.";
+            showStatus(
+                "branchStatus",
+                data.message ||
+                "Unable to load vehicles.",
+                "error"
+            );
 
             return;
 
         }
 
 
-        data.vehicles.forEach(vehicle=>{
+        const tbody =
+            document
+            .getElementById("branchTableBody");
+
+
+        tbody.innerHTML = "";
+
+
+        document
+        .getElementById("branchCount")
+        .textContent =
+            "Total vehicles in " +
+            branch +
+            ": " +
+            data.count;
+
+
+        if(data.vehicles.length === 0){
+
+            showStatus(
+                "branchStatus",
+                "No test drive vehicles found in this branch.",
+                "info"
+            );
+
+            return;
+
+        }
+
+
+        data.vehicles.forEach(function(vehicle){
+
 
             const row =
-            document.createElement("tr");
+                document.createElement("tr");
 
 
-            row.innerHTML =
+            row.innerHTML = `
 
-            "<td>" +
-            escapeHtml(vehicle.vehicleNumber) +
-            "</td>" +
+                <td>${escapeHtml(vehicle.vehicleNumber)}</td>
 
-            "<td>" +
-            escapeHtml(vehicle.vehicleName) +
-            "</td>" +
+                <td>${escapeHtml(vehicle.vehicleName)}</td>
 
-            "<td>" +
-            escapeHtml(vehicle.variant) +
-            "</td>" +
+                <td>${escapeHtml(vehicle.variant)}</td>
 
-            "<td>" +
-            escapeHtml(vehicle.fuel) +
-            "</td>" +
+                <td>${escapeHtml(vehicle.fuel)}</td>
 
-            "<td>" +
-            escapeHtml(vehicle.branch) +
-            "</td>";
+                <td>${escapeHtml(vehicle.branch)}</td>
+
+            `;
 
 
             tbody.appendChild(row);
@@ -1653,54 +1839,317 @@ function loadBranchVehicles(){
         });
 
 
-        count.textContent =
-        "Total Vehicles: " +
-        data.vehicles.length;
+        document
+        .getElementById("branchResults")
+        .style.display = "block";
 
 
-        table.style.display="table";
+    }
+    catch(error){
 
-    })
+        document
+        .getElementById("branchLoading")
+        .classList.remove("show");
 
-    .catch(error=>{
 
-        console.error(error);
+        showStatus(
+            "branchStatus",
+            "Unable to connect to the database.",
+            "error"
+        );
 
-        loading.style.display="none";
-
-        error.textContent =
-        "Unable to connect to the database.";
-
-        error.style.display="block";
-
-    });
+    }
 
 }
 
 
-/* =========================================
-   ADD BRANCH
-========================================= */
+/* =====================================================
+   ADMIN LOGIN
+===================================================== */
 
-function addBranch(){
+function unlockAdmin(){
+
 
     const pin =
-    document
-    .getElementById("adminPin")
-    .value
-    .trim();
-
-
-    const branch =
-    document
-    .getElementById("newBranch")
-    .value
-    .trim();
+        document
+        .getElementById("adminPin")
+        .value
+        .trim();
 
 
     if(!pin){
 
-        showAddError("Please enter the Admin PIN.");
+        showStatus(
+            "adminLoginStatus",
+            "Please enter the admin PIN.",
+            "error"
+        );
+
+        return;
+
+    }
+
+
+    /*
+       The PIN is checked again by Apps Script
+       when data is actually submitted.
+    */
+
+    currentAdminPin = pin;
+
+
+    document
+    .getElementById("adminLock")
+    .style.display = "none";
+
+
+    document
+    .getElementById("adminContent")
+    .classList.add("show");
+
+
+    loadBranches();
+
+
+    hideStatus("adminLoginStatus");
+
+}
+
+
+/* =====================================================
+   LOCK ADMIN
+===================================================== */
+
+function lockAdmin(){
+
+
+    currentAdminPin = "";
+
+
+    document
+    .getElementById("adminPin")
+    .value = "";
+
+
+    document
+    .getElementById("adminLock")
+    .style.display = "block";
+
+
+    document
+    .getElementById("adminContent")
+    .classList.remove("show");
+
+}
+
+
+/* =====================================================
+   ADD BRANCH
+===================================================== */
+
+async function addBranch(){
+
+
+    if(!checkApiUrl()) return;
+
+
+    if(!currentAdminPin){
+
+        showStatus(
+            "addBranchStatus",
+            "Please unlock the admin section first.",
+            "error"
+        );
+
+        return;
+
+    }
+
+
+    const branch =
+        document
+        .getElementById("newBranch")
+        .value
+        .trim();
+
+
+    if(!branch){
+
+        showStatus(
+            "addBranchStatus",
+            "Please enter a branch name.",
+            "error"
+        );
+
+        return;
+
+    }
+
+
+    try{
+
+
+        const url =
+            GOOGLE_SCRIPT_URL +
+            "?action=addBranch" +
+            "&pin=" +
+            encodeURIComponent(currentAdminPin) +
+            "&branch=" +
+            encodeURIComponent(branch);
+
+
+        const response =
+            await fetch(url);
+
+
+        const data =
+            await response.json();
+
+
+        if(data.success){
+
+            showStatus(
+                "addBranchStatus",
+                data.message,
+                "success"
+            );
+
+
+            document
+            .getElementById("newBranch")
+            .value = "";
+
+
+            loadBranches();
+
+        }
+        else{
+
+            showStatus(
+                "addBranchStatus",
+                data.message,
+                "error"
+            );
+
+        }
+
+
+    }
+    catch(error){
+
+        showStatus(
+            "addBranchStatus",
+            "Unable to connect to the database.",
+            "error"
+        );
+
+    }
+
+}
+
+
+/* =====================================================
+   ADD VEHICLE
+===================================================== */
+
+async function addVehicle(){
+
+
+    if(!checkApiUrl()) return;
+
+
+    if(!currentAdminPin){
+
+        showStatus(
+            "addVehicleStatus",
+            "Please unlock the admin section first.",
+            "error"
+        );
+
+        return;
+
+    }
+
+
+    const vehicleNumber =
+        document
+        .getElementById("addVehicleNumber")
+        .value
+        .trim();
+
+
+    const vehicleName =
+        document
+        .getElementById("addVehicleName")
+        .value
+        .trim();
+
+
+    const variant =
+        document
+        .getElementById("addVariant")
+        .value
+        .trim();
+
+
+    const fuel =
+        document
+        .getElementById("addFuel")
+        .value;
+
+
+    const branch =
+        document
+        .getElementById("addBranchSelect")
+        .value;
+
+
+    if(!vehicleNumber){
+
+        showStatus(
+            "addVehicleStatus",
+            "Please enter the vehicle number.",
+            "error"
+        );
+
+        return;
+
+    }
+
+
+    if(!vehicleName){
+
+        showStatus(
+            "addVehicleStatus",
+            "Please enter the vehicle name.",
+            "error"
+        );
+
+        return;
+
+    }
+
+
+    if(!variant){
+
+        showStatus(
+            "addVehicleStatus",
+            "Please enter the variant.",
+            "error"
+        );
+
+        return;
+
+    }
+
+
+    if(!fuel){
+
+        showStatus(
+            "addVehicleStatus",
+            "Please select the fuel type.",
+            "error"
+        );
 
         return;
 
@@ -1709,130 +2158,10 @@ function addBranch(){
 
     if(!branch){
 
-        showAddError("Please enter a branch name.");
-
-        return;
-
-    }
-
-
-    showAddError("");
-
-
-    const url =
-    GOOGLE_SCRIPT_URL +
-    "?action=addBranch" +
-    "&adminPin=" +
-    encodeURIComponent(pin) +
-    "&branch=" +
-    encodeURIComponent(branch);
-
-
-    fetch(url)
-
-    .then(response=>response.json())
-
-    .then(data=>{
-
-        if(data.success){
-
-            showAddSuccess(
-            "Branch added successfully."
-            );
-
-            document
-            .getElementById("newBranch")
-            .value="";
-
-            loadBranches();
-
-        }else{
-
-            showAddError(
-            data.message ||
-            "Unable to add branch."
-            );
-
-        }
-
-    })
-
-    .catch(error=>{
-
-        console.error(error);
-
-        showAddError(
-        "Unable to connect to database."
-        );
-
-    });
-
-}
-
-
-/* =========================================
-   ADD VEHICLE
-========================================= */
-
-function addVehicle(){
-
-    const pin =
-    document
-    .getElementById("adminPin")
-    .value
-    .trim();
-
-
-    const vehicleNumber =
-    document
-    .getElementById("addVehicleNumber")
-    .value
-    .trim();
-
-
-    const vehicleName =
-    document
-    .getElementById("addVehicleName")
-    .value
-    .trim();
-
-
-    const variant =
-    document
-    .getElementById("addVariant")
-    .value
-    .trim();
-
-
-    const fuel =
-    document
-    .getElementById("addFuel")
-    .value;
-
-
-    const branch =
-    document
-    .getElementById("addBranchSelect")
-    .value;
-
-
-    if(!pin){
-
-        showAddError("Please enter the Admin PIN.");
-
-        return;
-
-    }
-
-
-    if(!vehicleNumber ||
-       !vehicleName ||
-       !variant ||
-       !fuel ||
-       !branch){
-
-        showAddError(
-        "Please fill all vehicle details."
+        showStatus(
+            "addVehicleStatus",
+            "Please select the branch.",
+            "error"
         );
 
         return;
@@ -1840,185 +2169,220 @@ function addVehicle(){
     }
 
 
-    const url =
-    GOOGLE_SCRIPT_URL +
-
-    "?action=addVehicle" +
-
-    "&adminPin=" +
-    encodeURIComponent(pin) +
-
-    "&vehicleNumber=" +
-    encodeURIComponent(vehicleNumber) +
-
-    "&vehicleName=" +
-    encodeURIComponent(vehicleName) +
-
-    "&variant=" +
-    encodeURIComponent(variant) +
-
-    "&fuel=" +
-    encodeURIComponent(fuel) +
-
-    "&branch=" +
-    encodeURIComponent(branch);
+    try{
 
 
-    fetch(url)
+        const params = new URLSearchParams();
 
-    .then(response=>response.json())
 
-    .then(data=>{
+        params.append(
+            "action",
+            "addVehicle"
+        );
+
+
+        params.append(
+            "pin",
+            currentAdminPin
+        );
+
+
+        params.append(
+            "vehicleNumber",
+            vehicleNumber
+        );
+
+
+        params.append(
+            "vehicleName",
+            vehicleName
+        );
+
+
+        params.append(
+            "variant",
+            variant
+        );
+
+
+        params.append(
+            "fuel",
+            fuel
+        );
+
+
+        params.append(
+            "branch",
+            branch
+        );
+
+
+        const response =
+            await fetch(
+                GOOGLE_SCRIPT_URL +
+                "?" +
+                params.toString()
+            );
+
+
+        const data =
+            await response.json();
+
 
         if(data.success){
 
-            showAddSuccess(
-            "Test Drive vehicle added successfully."
+            showStatus(
+                "addVehicleStatus",
+                data.message,
+                "success"
             );
 
 
             document
             .getElementById("addVehicleNumber")
-            .value="";
+            .value = "";
 
 
             document
             .getElementById("addVehicleName")
-            .value="";
+            .value = "";
 
 
             document
             .getElementById("addVariant")
-            .value="";
+            .value = "";
 
 
             document
             .getElementById("addFuel")
-            .value="";
+            .value = "";
 
 
             document
             .getElementById("addBranchSelect")
-            .value="";
+            .value = "";
 
 
-        }else{
+        }
+        else{
 
-            showAddError(
-            data.message ||
-            "Unable to add vehicle."
+            showStatus(
+                "addVehicleStatus",
+                data.message,
+                "error"
             );
 
         }
 
-    })
 
-    .catch(error=>{
+    }
+    catch(error){
 
-        console.error(error);
-
-        showAddError(
-        "Unable to connect to database."
+        showStatus(
+            "addVehicleStatus",
+            "Unable to connect to the database.",
+            "error"
         );
 
-    });
+    }
 
 }
 
 
-/* =========================================
-   SUCCESS / ERROR
-========================================= */
+/* =====================================================
+   STATUS FUNCTIONS
+===================================================== */
 
-function showSearchError(message){
+function showStatus(
+    id,
+    message,
+    type
+){
 
-    const error =
-    document.getElementById("searchError");
-
-    error.textContent=message;
-
-    error.style.display =
-    message ? "block" : "none";
-
-}
+    const element =
+        document
+        .getElementById(id);
 
 
-function showAddError(message){
+    element.textContent =
+        message;
 
-    const error =
-    document.getElementById("addError");
 
-    error.textContent=message;
-
-    error.style.display =
-    message ? "block" : "none";
+    element.className =
+        "status show " +
+        type;
 
 }
 
 
-function showAddSuccess(message){
+function hideStatus(id){
 
-    const success =
-    document.getElementById("addSuccess");
+    const element =
+        document
+        .getElementById(id);
 
-    success.textContent=message;
 
-    success.style.display =
-    message ? "block" : "none";
+    if(element){
+
+        element.classList.remove("show");
+
+    }
 
 }
 
 
-/* =========================================
+/* =====================================================
    HTML SECURITY
-========================================= */
+===================================================== */
 
 function escapeHtml(value){
 
     return String(value || "")
-    .replace(/&/g,"&amp;")
-    .replace(/</g,"&lt;")
-    .replace(/>/g,"&gt;")
-    .replace(/"/g,"&quot;")
-    .replace(/'/g,"&#039;");
+        .replace(/&/g,"&amp;")
+        .replace(/</g,"&lt;")
+        .replace(/>/g,"&gt;")
+        .replace(/"/g,"&quot;")
+        .replace(/'/g,"&#039;");
 
 }
 
 
-/* =========================================
+/* =====================================================
    ENTER KEY SEARCH
-========================================= */
+===================================================== */
 
 document
 .getElementById("vehicleNumber")
 .addEventListener(
-"keydown",
-function(event){
+    "keydown",
+    function(event){
 
-    if(event.key==="Enter"){
+        if(event.key === "Enter"){
 
-        searchVehicle();
+            searchVehicle();
+
+        }
 
     }
+);
 
-});
 
-
-/* =========================================
+/* =====================================================
    INITIAL LOAD
-========================================= */
+===================================================== */
 
 window.addEventListener(
-"load",
-function(){
+    "load",
+    function(){
 
-    loadBranches();
+        loadBranches();
 
-});
+    }
+);
 
 </script>
+
 
 </body>
 
 </html>
-```
